@@ -33,11 +33,23 @@ def initial_round
 end
 
 def hit?
- 
+ prompt_user
+ get_user_input
+  until input == h || input == s
+    invalid_command
+    prompt_user
+    input = get_user_input
+  end
+  
+  if input == h
+    card_total += deal_card
+  elsif input == s
+    card_total
+  end
 end
 
 def invalid_command
-  # code invalid_command here
+ puts "Please enter a valid command"
 end
 
 #####################################################
@@ -45,6 +57,11 @@ end
 #####################################################
 
 def runner
-  # code runner here
+  welcome
+  initial_round
+  hit?
+  display_card_total
+  
+  end_game
 end
     
