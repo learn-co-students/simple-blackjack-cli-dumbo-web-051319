@@ -1,3 +1,6 @@
 require_relative "blackjack.rb"
 
-runner
+def welcome
+  puts "Welcome to the Blackjack Table."
+end
+#runner
